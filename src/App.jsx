@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import Footer from "./Components/Footer";
-import Home from "./sections/home";
+import Home from "./Sections/Home";
 import About from "./Sections/About";
 import Skills from "./Sections/Skills";
 import Projects from "./Sections/Projects";
-import Contact from "./sections/contact";
+import Contact from "./sections/Contact"; 
 export default function App() {
   return (
     <div className="relative min-h-screen text-white ">
