@@ -1,25 +1,52 @@
+import { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); 
     }
   };
+
   return (
-    <div className="flex items-center ">
-      <nav className=" text-white p-4 flex px-8 items-center justify-between  fixed w-full top-0 z-50 " >
-        <div className="flex items-center">
-        {/* <img src="/logo.png" alt="Logo" className="h-10 w-10 mr-2" /> */}
-        <h1 className="text-2xl  bg-gradient-to-r from-lime-600 to-amber-600 text-transparent bg-clip-text font-bold">Sahil Mansuri</h1>
-        </div>
-        <ul className="flex justify-center gap-6  bg-gradient-to-r from-lime-600 to-amber-600 text-transparent bg-clip-text  ">
-          <li onClick ={() => scrollToSection("home")} className="hover:font-bold"><a href="#home">Home</a></li>
-          <li onClick ={() => scrollToSection("About")} className="hover:font-bold"><a href="#about">About Me</a></li>
-          <li onClick ={() => scrollToSection("Skills")} className="hover:font-bold"><a href="#skills">Skills</a></li>
-          <li onClick ={() => scrollToSection("Projects")} className="hover:font-bold"><a href="#projects">Projects</a></li>
-          <li onClick ={() => scrollToSection("Contact")} className="hover:font-bold"><a href="#contact">Contact</a></li>
+    <nav className="fixed w-full top-0 z-50 bg-black/80 text-white backdrop-blur-sm shadow-md">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+        <h1 className="text-2xl bg-gradient-to-r from-lime-600 to-amber-600 text-transparent bg-clip-text font-bold">
+          Sahil Mansuri
+        </h1>
+
+        
+        <ul className="hidden md:flex gap-6 bg-gradient-to-r from-lime-600 to-amber-600 text-transparent bg-clip-text">
+          <li onClick={() => scrollToSection("home")} className="hover:font-bold cursor-pointer">Home</li>
+          <li onClick={() => scrollToSection("about")} className="hover:font-bold cursor-pointer">About Me</li>
+          <li onClick={() => scrollToSection("skills")} className="hover:font-bold cursor-pointer">Skills</li>
+          <li onClick={() => scrollToSection("projects")} className="hover:font-bold cursor-pointer">Projects</li>
+          <li onClick={() => scrollToSection("contact")} className="hover:font-bold cursor-pointer">Contact</li>
         </ul>
-      </nav>
-    </div>
-  )
+
+        
+        <div className="md:hidden">
+          <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
+        </div>
+      </div>
+
+      {isOpen && (
+        <div className="md:hidden bg-black w-full px-6 pb-4">
+          <ul className="flex flex-col gap-4 mt-2 text-white text-lg">
+            <li onClick={() => scrollToSection("home")} className="hover:font-bold cursor-pointer">Home</li>
+            <li onClick={() => scrollToSection("about")} className="hover:font-bold cursor-pointer">About Me</li>
+            <li onClick={() => scrollToSection("skills")} className="hover:font-bold cursor-pointer">Skills</li>
+            <li onClick={() => scrollToSection("projects")} className="hover:font-bold cursor-pointer">Projects</li>
+            <li onClick={() => scrollToSection("contact")} className="hover:font-bold cursor-pointer">Contact</li>
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
 }

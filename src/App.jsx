@@ -16,11 +16,13 @@ export default function App() {
           <Home />
         </section>
 
-        <section id="About" className=" h-120 px-4 py-16 border-b border-gray-700 ">
+        <section id="about" className="max-w-5xl mx-auto px-4 py-12 border-b border-gray-700">
+
           <About />
         </section>
 
-        <section id="Skills" className="h-120 px-4 py-16 border-b border-gray-700 ">
+       <section id="about" className="max-w-5xl mx-auto px-4 py-12 border-b border-gray-700">
+
           <Skills />
         </section>
 
