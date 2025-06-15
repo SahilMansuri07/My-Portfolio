@@ -1,60 +1,44 @@
-import logo1 from "../assets/Images/logo1.png";
-import { TypeAnimation } from "react-type-animation";
-
-export default function Home() {
+export default function Hero() {
   return (
-    <section
-      id="home"
-      className="text-center py-20 pt-28 h-150 justify-center flex flex-col items-center border-bottom border-amber-50"
-    >
-      <div className="mb-4">
-        <img className="w-50 h-50 rounded-full" src={logo1} alt="" />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-4">
-          <span className="bg-gradient-to-r from-purple-600 to-yellow-400 text-transparent bg-clip-text">
-            I'm a Sahil Mansuri
-          </span>
-          <br />
-          <TypeAnimation
-            sequence={[
-              "Web Developer",
-              1000,
-              "FullStack Developer",
-              1000,
-              "Frontend Developer",
-              1000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-            className="bg-gradient-to-r from-pink-500 to-purple-500 text-transparent bg-clip-text"
-          />
-        </h1>
-        <p className="mt-4 text-lg">
-          I'm a Full Stack Developer passionate about building web apps.
-        </p>
-        <span className="text-lg bg-gradient-to-r from-yellow-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">
-          I'm currently open to opportunities across all roles , whether it's
-          full stack, frontend, backend, or something new. Let’s build something
-          great together!
+    <section className="w-full min-h-screen text-white flex flex-col items-center justify-center px-4 pt-24 pb-16">
+      {/* Profile Picture */}
+      <img
+        src="https://avatars.githubusercontent.com/u/102119202?v=4"
+        alt="Sahil Mansuri"
+        className="h-32 w-32 rounded-full border-4 border-white shadow-lg mb-6"
+      />
+
+      {/* Headline */}
+      <h1 className="text-center text-3xl sm:text-4xl font-bold leading-tight mb-4">
+        I'm <span className="text-purple-400">Sahil Mansuri</span>
+        <br />
+        <span className="bg-gradient-to-r from-fuchsia-400 to-amber-400 text-transparent bg-clip-text">
+          Web Developer
         </span>
-        <div className="flex flex-col sm:flex-row gap-4 ">
-          <a
-            href="/Sahil_Mansuri_CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-purple-500 hover:bg-purple-700 text-white font-bold py-2 my-7 px-5 rounded">
-              Show CV
-            </button>
-          </a>
-          <a href="#Contact">
-            <button className="bg-white hover:bg-gray-300 text-purple-600 font-bold py-2 my-7 px-4 rounded">
-              contact Me
-            </button>
-          </a>
-        </div>
+      </h1>
+
+      {/* Description */}
+      <p className="text-center text-sm text-white/90 max-w-md leading-relaxed mb-4">
+        I'm a Full Stack Developer passionate about crafting beautiful, scalable,
+        and high-performance web apps.
+      </p>
+      <p className="text-center text-sm text-white/80 max-w-md leading-relaxed">
+        Open to opportunities across all roles—full stack, frontend, backend, or
+        something new. Let’s build something great together!
+      </p>
+
+      {/* Buttons */}
+      <div className="flex flex-col sm:flex-row gap-4 mt-6 w-full max-w-xs sm:max-w-none sm:justify-center">
+        <button className="w-full sm:w-auto bg-gradient-to-r from-pink-500 to-indigo-500 text-white px-6 py-2 rounded-full font-medium hover:opacity-90 transition">
+          Show CV
+        </button>
+        <a
+          href="/cv.pdf"
+          download
+          className="w-full sm:w-auto text-center bg-white text-purple-700 px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition"
+        >
+          Download CV
+        </a>
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import { ABOUT_TEXT } from "../constant";
 
 export default function About() {
   return (
-    <section id="about" className="max-w-5xl mx-auto px-4 py-10">
+    <section id="about" className=" max-w-5xl mx-auto px-4 py-16">
       <h2 className="text-3xl bg-gradient-to-r from-purple-600 to-amber-600 text-transparent bg-clip-text font-semibold mb-8 text-center">
         About Me
       </h2>
@@ -12,9 +12,7 @@ export default function About() {
           alt="Profile"
           className="rounded-full h-32 w-32 shadow-lg"
         />
-        <p className="text-neutral-100 text-center md:text-left">
-          {ABOUT_TEXT}
-        </p>
+        <p className="text-neutral-100 text-center md:text-left">{ABOUT_TEXT}</p>
       </div>
     </section>
   );
