@@ -2,12 +2,12 @@ import { PROJECTS } from "../constant";
 
 export default function Projects() {
   return (
-    <section id="projects" className="max-w-6xl mx-auto p-4 sm:p-6">
+    <section id="projects" className="max-w-8xl mx-auto p-4 sm:p-6">
       <h2 className="text-2xl sm:text-3xl px-4 sm:px-8 py-6 font-semibold text-center bg-gradient-to-r from-rose-800 to-rose-200 text-transparent bg-clip-text">
         Projects
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      <div className="grid grid-cols-1 mt-25 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
         {PROJECTS.map((project, index) => (
           <div
             key={index}
